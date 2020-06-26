@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.GboxCtrlCli = new System.Windows.Forms.GroupBox();
             this.CboSelecCli = new System.Windows.Forms.ComboBox();
+            this.listaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.LblNombreCserv = new System.Windows.Forms.Label();
             this.GboDatoMasc = new System.Windows.Forms.GroupBox();
             this.CboSelecMasc = new System.Windows.Forms.ComboBox();
@@ -50,15 +51,18 @@
             this.LblDetRev = new System.Windows.Forms.Label();
             this.BtnGDatos = new System.Windows.Forms.Button();
             this.BtnCServ = new System.Windows.Forms.Button();
-            this.listaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clienteMascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.GboxCtrlCli.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).BeginInit();
             this.GboDatoMasc.SuspendLayout();
             this.GboCtrlServ.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteMascotaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // GboxCtrlCli
@@ -81,6 +85,10 @@
             this.CboSelecCli.Name = "CboSelecCli";
             this.CboSelecCli.Size = new System.Drawing.Size(307, 26);
             this.CboSelecCli.TabIndex = 1;
+            // 
+            // listaBindingSource
+            // 
+            this.listaBindingSource.DataSource = typeof(Veterinario.lista);
             // 
             // LblNombreCserv
             // 
@@ -123,6 +131,7 @@
             // 
             // GboCtrlServ
             // 
+            this.GboCtrlServ.Controls.Add(this.dataGridView2);
             this.GboCtrlServ.Controls.Add(this.DateTimeVacuna);
             this.GboCtrlServ.Controls.Add(this.label1);
             this.GboCtrlServ.Controls.Add(this.TxtPago);
@@ -275,10 +284,6 @@
             this.BtnCServ.UseVisualStyleBackColor = true;
             this.BtnCServ.Click += new System.EventHandler(this.BtnCServ_Click);
             // 
-            // listaBindingSource
-            // 
-            this.listaBindingSource.DataSource = typeof(Veterinario.lista);
-            // 
             // listaBindingSource1
             // 
             this.listaBindingSource1.DataSource = typeof(Veterinario.lista);
@@ -287,11 +292,31 @@
             // 
             this.clienteMascotaBindingSource.DataSource = typeof(Veterinario.Cliente_Mascota);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-102, 680);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(793, 150);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(542, 320);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 13;
+            // 
             // ControlServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 719);
+            this.ClientSize = new System.Drawing.Size(791, 872);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BtnCServ);
             this.Controls.Add(this.BtnGDatos);
             this.Controls.Add(this.GboCtrlServ);
@@ -302,13 +327,15 @@
             this.Load += new System.EventHandler(this.ControlServicio_Load);
             this.GboxCtrlCli.ResumeLayout(false);
             this.GboxCtrlCli.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).EndInit();
             this.GboDatoMasc.ResumeLayout(false);
             this.GboDatoMasc.PerformLayout();
             this.GboCtrlServ.ResumeLayout(false);
             this.GboCtrlServ.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteMascotaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +366,7 @@
         private System.Windows.Forms.BindingSource clienteMascotaBindingSource;
         private System.Windows.Forms.ComboBox CboSelecCli;
         private System.Windows.Forms.DateTimePicker DateTimeVacuna;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

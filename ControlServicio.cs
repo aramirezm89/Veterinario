@@ -12,7 +12,6 @@ namespace Veterinario
         string[] datos = new string[7];
         bool columnas = false; //variable con el fin de que la datatable no registre mas de una vez el nombre de los campos
         List<CllsControlServicio> listaControlServicio = new List<CllsControlServicio>();
-
         private DataTable tabla;
 
 
@@ -123,15 +122,16 @@ namespace Veterinario
 
 
 
-            if (columnas == false)
-            {
-                Tabla();
-            }
+            //if (columnas == false)
+            //{
+            //    Tabla();
+            //}
 
-
+            Tabla();
 
             tabla.Rows.Add(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6]);
 
+            //dataGridView1.DataSource = tabla; mostrar datos en una datatable en el mismo formulario
            
 
 
