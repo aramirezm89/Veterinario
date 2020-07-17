@@ -68,6 +68,7 @@
       <DependentUpon>Cliente_Mascota.cs</DependentUpon>
     </Compile>
     <Compile Include="CllsControlServicio.cs" />
+    <Compile Include="ClsBDDatos.cs" />
     <Compile Include="Consulta.cs">
       <SubType>Form</SubType>
     </Compile>

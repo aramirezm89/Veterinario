@@ -3,6 +3,7 @@
     public class lista
     {
         private string nombre;
+        private string apellidos;
         private string rut;
         private string direccion;
         private string email;
@@ -22,9 +23,10 @@
             Email = string.Empty;
             Fono = string.Empty;
         }
-        public lista(string nom, string ru, string direc, string em, string fon, string sex, string vac, string col, string nomMasc, string ed)
+        public lista(string nom,string ap, string ru, string direc, string em, string fon, string sex, string vac, string col, string nomMasc, string ed)
         {
             Nombre = nom;
+            Apellidos = ap;
             Rut = ru;
             Direccion = direc;
             Email = em;
@@ -34,6 +36,7 @@
             color = col;
             nombreMascota = nomMasc;
             Edad = ed;
+
 
         }
 
@@ -47,6 +50,7 @@
         public string Color { get => color; set => color = value; }
         public string NombreMascota { get => nombreMascota; set => nombreMascota = value; }
         public string Edad { get => edad; set => edad = value; }
+        public string Apellidos { get => apellidos; set => apellidos = value; }
     }
 
 

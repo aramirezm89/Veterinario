@@ -61,6 +61,8 @@
             this.LblTipMasc = new System.Windows.Forms.Label();
             this.BtnGuarDat = new System.Windows.Forms.Button();
             this.BtnCtrlServ = new System.Windows.Forms.Button();
+            this.lblApellidos = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -79,6 +81,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtApellidos);
+            this.groupBox1.Controls.Add(this.lblApellidos);
             this.groupBox1.Controls.Add(this.TxtFono);
             this.groupBox1.Controls.Add(this.TxtEmail);
             this.groupBox1.Controls.Add(this.TxtDirec);
@@ -384,6 +388,23 @@
             this.BtnCtrlServ.UseVisualStyleBackColor = true;
             this.BtnCtrlServ.Click += new System.EventHandler(this.BtnCtrlServ_Click);
             // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Location = new System.Drawing.Point(25, 229);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(76, 18);
+            this.lblApellidos.TabIndex = 10;
+            this.lblApellidos.Text = "Apellidos";
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(173, 229);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(341, 24);
+            this.txtApellidos.TabIndex = 11;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
+            // 
             // Cliente_Mascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,7 +418,6 @@
             this.Name = "Cliente_Mascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente_Mascota";
-           
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -446,5 +466,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton RbHembra;
         private System.Windows.Forms.RadioButton RbMacho;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.Label lblApellidos;
     }
 }

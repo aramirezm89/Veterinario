@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Veterinario
@@ -58,13 +61,40 @@ namespace Veterinario
                     vacunas = "No";
                 }
 
-                lista lista1 = new lista(TxtNombre.Text, TxtRut.Text, TxtDirec.Text, TxtEmail.Text, TxtFono.Text, sex, vacunas, TxtColor.Text, TxtNomMasc.Text, TxtEdadMasc.Text);
+                lista lista1 = new lista(TxtNombre.Text,txtApellidos.Text, TxtRut.Text, TxtDirec.Text, TxtEmail.Text, TxtFono.Text, sex, vacunas, TxtColor.Text, TxtNomMasc.Text, TxtEdadMasc.Text);
 
                 cliente.Add(lista1);
                 CboRaza.Items.Add(lista1.Nombre);
                 
             }
+            try
+            {
+                ClsBDDatos instanciaCls = new ClsBDDatos();
+                System.Data.SqlClient.SqlConnection LocCnn = instanciaCls.AbrirConex();
+                SqlCommand cmd = LocCnn.CreateCommand();
+                cmd.CommandText = "VET_InsertarCliente_SP";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@in_rut", TxtRut.Text);
+                cmd.Parameters.Add("@in_nombre", TxtNombre.Text);
+                cmd.Parameters.Add("@in_apellido", txtApellidos.Text);
+                cmd.Parameters.Add("@in_direccion", TxtDirec.Text);
+                cmd.Parameters.Add("@in_email", TxtEmail.Text);
+                cmd.Parameters.Add("@in_fono", TxtFono.Text);
+                cmd.ExecuteNonQuery();
+                LocCnn = instanciaCls.CerrarConex();
+                MessageBox.Show("Alumno Insertado Correctamente", "Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de Conexión", "Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ClsBDDatos instanciaCls = new ClsBDDatos();
+                System.Data.SqlClient.SqlConnection LocCnn = instanciaCls.CerrarConex();
+                LocCnn = instanciaCls.CerrarConex();
+            }
 
 
 
@@ -132,7 +162,10 @@ namespace Veterinario
 
         }
 
-       
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
     }
 
 
